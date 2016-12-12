@@ -76,3 +76,4 @@ switch($command->getName()){
 			
 			}
 }
+?>
