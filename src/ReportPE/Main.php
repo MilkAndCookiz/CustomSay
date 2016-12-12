@@ -74,5 +74,7 @@ switch($command->getName()){
 			}else{
 				$sender->sendMessage(TextFormat::RED."No Permission!");
 				return true;
+
     }
+    
 }
