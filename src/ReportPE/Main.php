@@ -27,7 +27,6 @@ public function onDisable(){
 switch($command->getName()){ 
             case "report":
 		 $name = \strtolower(\array_shift($args));
-
                     $player = $sender->getServer()->getPlayer($name);
                 if(!(isset($args[0]))){
                     $sender->sendMessage(TextFormat::RED."Usage: /report <Player> <Reason>");
@@ -57,7 +56,7 @@ switch($command->getName()){
 			}else if($sender->hasPermission("report.report")){
                              
 				foreach($this->getServer()->getOnlinePlayers() as $p){
-					if($p->isOnline() && $p->hasPermission("report.report.view")){
+					if($p->isOnline() && $p->hasPermission("chattoolspro.report.view")){
                                             if($player instanceof Player){
 							$p->sendMessage(TextFormat::DARK_RED."[Report] ".TextFormat::AQUA."Player ".$sender->getName()." reported ".TextFormat::RED.$player->getDisplayName().TextFormat::AQUA." for ".TextFormat::DARK_RED.implode("", $args));
                                                         
@@ -74,7 +73,4 @@ switch($command->getName()){
 			}else{
 				$sender->sendMessage(TextFormat::RED."No Permission!");
 				return true;
-
-    }
-    
-}
+			}
