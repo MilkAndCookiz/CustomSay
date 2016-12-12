@@ -11,7 +11,7 @@ use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 use pocketmine\permission\ServerOperator;
-//Coded by CookieCode
+//Coded by CookieCode, it's my first plugin !
 
 class Main extends PluginBase implements Listener{
 
