@@ -8,7 +8,6 @@ commands:
  customsay:
   description: Broadcast a Message with any tag
   aliases: [cs]
-  usage: "/cs <message>"
   permission: cs.customsay
 permissions:
  cs.customsay:
