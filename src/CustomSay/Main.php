@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
     public function onCommand(CommandSender $sender, Command $command, $label, array $args){
         switch($command->getName()){
 
-          if($command == "customsay"){
+          case "customsay":
                     if(!(isset($args[0]))){
                 return false;
                 }
@@ -40,6 +40,5 @@ class Main extends PluginBase implements Listener{
                 return false;
           }
         }
-      }
   
-    }
+      }
