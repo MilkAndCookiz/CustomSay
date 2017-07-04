@@ -9,10 +9,8 @@ use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat;
-use pocketmine\utils\Config;
 use pocketmine\permission\ServerOperator;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
-use pocketmine\network\portocol\LevelSoundEvent;
 
 //Coded by CookieCode
 
@@ -33,12 +31,13 @@ class Main extends PluginBase implements Listener{
 
           case "customsay":
                     if(!(isset($args[0]))){
+					$sender->sendMessage(TextFormat::RED . "[" . TextFormat::BLUE . "CustomSay" . TextFormat::RED . "]" . TextFormat::GOLD . " Use : /cs <message>");
                 return false;
                 }
+
                 $sender->getServer()->broadcastMessage(implode(" ", $args));
-                $sender->getLevel()->broadcastLevelEvent($sender, LevelEventPacket::EVENT_SOUND_ANVIL_USE);
+				$sender->sendMessage(TextFormat::RED . "[" . TextFormat::BLUE . "CustomSay" . TextFormat::RED . "]" . TextFormat::GOLD . " Your message ' " . TextFormat::WHITE . (implode(" ", $args)) . TextFormat::RESET . TextFormat::GOLD . " ' has been broadcasted !");
                 return false;
           }
         }
-  
       }
