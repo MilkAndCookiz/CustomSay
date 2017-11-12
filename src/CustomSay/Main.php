@@ -26,7 +26,7 @@ class Main extends PluginBase implements Listener{
         $this->getLogger()->info(TextFormat::BLUE . "CustomSay disabled.");
     }
 
-    public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
         switch($command->getName()){
 
           case "customsay":
